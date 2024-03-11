@@ -39,7 +39,6 @@ y que es capaz de generar documentación para sus programas utilizando la herram
 * Acreditar que es capaz de editar ficheros de forma remota en su VM usando Visual Studio Code
 
 ### Indicaciones de caracter general
-
 El programa que desarrolle ha de ser orientados a objetos.
 Ponga en práctica los principios de abstracción y encapsulamiento característicos 
 de la OOP así como las buenas prácticas, principios y patrones que han sido expuestos en las clases de la asignatura.
@@ -48,60 +47,47 @@ Previo a la implementación de cada clase, diseñe y desarrolle un conjunto de t
 funcionamiento de todos los métodos que desarrolle.
 
 Configure para esta práctica una página web que sirva de índice para mostrar la documentación generada por
-TypeDoc para el ejercicio que se propone.
+TypeDoc para su aplicación.
 
-Configure adecuadamente ficheros `package.json` y `tsconfig.json` en el directorio raíz de su ejercicio, 
-de modo que ejecutando `npm install` queden instaladas todas las dependencias del proyecto.
+Configure adecuadamente ficheros `package.json` y `tsconfig.json` en el directorio raíz de su ejercicio 
+que permitan la instalación de las dependencias de su proyecto.
 
 En el desarrollo de esta práctica, utilice el depurador integrado en el navegador para confirmar que el flujo
 de ejecución de su programa es el correcto.
 
+### Representación de funciones
+El objetivo de esta práctica es el desarrollo de una aplicación que permita la visualización en una página web
+de la representación gráfica de una función.
 
-### QuickHull
+Intente que su aplicación imite en la medida de lo posible a 
+[esta aplicación](https://www.geogebra.org/m/BTC45Jzp)
+que se tomará como referencia.
+De esa página imite los ejes coordenados así como la numeración de los mismos y el área de dibujo de la
+función.
+En el caso de esa página, pruebe a dibujar diferentes funciones usando el campo "Entrada" de la parte
+inferior.
+Pruebe a introducir funciones como *sin(x)*, *exp(x)* o *sqrt(x)* y visualice el resultado.
 
-La 
-[envolvente convexa](https://en.wikipedia.org/wiki/Convex_hull) 
-de un conjunto de puntos en el plano es un polígono convexo cuyos 
-vértices son algunos de los puntos del conjunto inicial de puntos.
 
-En esta práctica se propone calcular y representar gráficamente la envolvente convexa de un conjunto 
-de puntos del plano que se generarán aletoriamente.
 
-Desarrolle un programa `quick-hull.ts` que calcule y represente gráficamente la
-envolvente convexa de un conjunto de puntos utilizando el algoritmo 
-[Quickhull](https://en.wikipedia.org/wiki/Quickhull).
-
-[Este vídeo](https://www.youtube.com/watch?v=2EKIZrimeuk)
-aporta información sobre la envolvente convexa así como el algoritmo *QuickHull* y puede servirle de guía para
-comprender el algoritmo, cuyos pasos son los que se describen (p. ej.) en
-[Wikipedia](https://en.wikipedia.org/wiki/Quickhull#Algorithm)
-
-El funcionamiento del programa estará apoyado por una clase cuya interfaz pública será la que
-dibuje la envolvente convexa.
-
-Trate de imitar 
-[esta simulación](https://en.wikipedia.org/wiki/Quickhull#/media/File:Animation_depicting_the_quickhull_algorithm.gif) 
-priorizando la visualización de la nube de puntos y las líneas que el algoritmo dibuja progresivamente. 
-El dibujo de los ejes de coordenadas puede considerarse una característica opcional.
-
-Previo al desarrollo de la aplicación, realice un diseño de la misma identificando las diferentes clases que
+Previo al desarrollo, realice un diseño de su aplicación identificando las diferentes clases que
 intervienen en el programa.
 Utilice alguna aplicación que conozca para dibujar un diagrama UML de las clases que intervienen.
 
 La visualización de la ejecución del programa se realizará a través de una página web alojada
-en la máquina IaaS-ULL de la asignatura y cuya URL tendrá la forma:
+en la máquina IaaS-ULL de la asignatura (puede utilizar si lo desea la extensión *Live View* de VSC) y cuya URL tendrá la forma:
 
-[1] `http://10.6.129.123:8080/einstein-albert-quick-hull.html`
+[1] `http://10.6.129.123:8080/einstein-albert-graphic-calculator.html`
 
-en la que se embeberá un lienzo (canvas) para dibujar el conjunto de puntos y su polígono envolvente.
+en la que se embeberá un lienzo (canvas) para dibujar la gráfica de una función.
 Sustituya *Albert Einstein* por su nombre y apellido en la URL de su página
- la dirección IP anterior por la correspondiente a su máquina IaaS.
+y la dirección IP anterior por la correspondiente a su máquina IaaS.
 
 La web [1] mostrará un lienzo (canvas) que ocupe la mayor parte de una pantalla de ordenador de resolución usual.
 
 No es necesario que invierta esfuerzo en la programación de los aspectos de esa página que no tienen relación
 con TypeScript. 
-Tanto HTML como CSS son aspectos que se estudiarán con cierto nivel de detalle en el futuro. 
+Tanto HTML como CSS son aspectos que se estudiarán con mayor nivel de detalle en el futuro. 
 No se requiere que dedique esfuerzo a esos aspectos en esta práctica.
 Tampoco se propone en esta práctica que utilice elementos interactivos (botones, campos de texto, selectores,
 etc.).
@@ -132,6 +118,12 @@ Las siguientes deben tomarse como especificaciones adicionales de la aplicación
   referencia.
 * El programa dejará transcurrir un cierto intervalo de tiempo entre el dibujo de una línea y la siguiente
   en la evolución del algoritmo, de forma también análoga a como ocurre en la simulación previa.
+
+## Diseño orientado a objetos
+Se deja total libertad al alumnado para diseñar la aplicación de la forma que estime más conveniente.
+Se valorará la puesta en práctica en el diseño que se realice de los contenidos relacionados con principios y
+buenas prácticas de OOP estudiados en la asignatura.
+
 
 ## Referencias
 * [TypeScript Tutorial](https://www.typescripttutorial.net/)
