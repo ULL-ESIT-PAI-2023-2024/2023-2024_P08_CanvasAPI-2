@@ -1,4 +1,4 @@
-# Práctica 7. Programación Gráfica en TypeScript. La API Canvas. Figuras geométricas planas.
+# Práctica 8. Programación Gráfica en TypeScript. La API Canvas. Representación de funciones.
 ### Factor de ponderación: 7
 
 ### Objetivos
@@ -40,7 +40,7 @@ y que es capaz de generar documentación para sus programas utilizando la herram
 
 ### Indicaciones de caracter general
 
-Todos los programas que desarrolle han de ser orientados a objetos.
+El programa que desarrolle ha de ser orientados a objetos.
 Ponga en práctica los principios de abstracción y encapsulamiento característicos 
 de la OOP así como las buenas prácticas, principios y patrones que han sido expuestos en las clases de la asignatura.
 
@@ -56,23 +56,55 @@ de modo que ejecutando `npm install` queden instaladas todas las dependencias de
 En el desarrollo de esta práctica, utilice el depurador integrado en el navegador para confirmar que el flujo
 de ejecución de su programa es el correcto.
 
-### La página web de la aplicación
-En esta práctica se propone diseñar diferentes clases que permitan la visualización de figuras
-geométricas en una página web estática.
+
+### QuickHull
+
+La 
+[envolvente convexa](https://en.wikipedia.org/wiki/Convex_hull) 
+de un conjunto de puntos en el plano es un polígono convexo cuyos 
+vértices son algunos de los puntos del conjunto inicial de puntos.
+
+En esta práctica se propone calcular y representar gráficamente la envolvente convexa de un conjunto 
+de puntos del plano que se generarán aletoriamente.
+
+Desarrolle un programa `quick-hull.ts` que calcule y represente gráficamente la
+envolvente convexa de un conjunto de puntos utilizando el algoritmo 
+[Quickhull](https://en.wikipedia.org/wiki/Quickhull).
+
+[Este vídeo](https://www.youtube.com/watch?v=2EKIZrimeuk)
+aporta información sobre la envolvente convexa así como el algoritmo *QuickHull* y puede servirle de guía para
+comprender el algoritmo, cuyos pasos son los que se describen (p. ej.) en
+[Wikipedia](https://en.wikipedia.org/wiki/Quickhull#Algorithm)
+
+El funcionamiento del programa estará apoyado por una clase cuya interfaz pública será la que
+dibuje la envolvente convexa.
+
+Trate de imitar 
+[esta simulación](https://en.wikipedia.org/wiki/Quickhull#/media/File:Animation_depicting_the_quickhull_algorithm.gif) 
+priorizando la visualización de la nube de puntos y las líneas que el algoritmo dibuja progresivamente. 
+El dibujo de los ejes de coordenadas puede considerarse una característica opcional.
+
+Previo al desarrollo de la aplicación, realice un diseño de la misma identificando las diferentes clases que
+intervienen en el programa.
+Utilice alguna aplicación que conozca para dibujar un diagrama UML de las clases que intervienen.
 
 La visualización de la ejecución del programa se realizará a través de una página web alojada
-en la máquina IaaS-ULL de la asignatura (no utilice la extensión *Live View* de VSC) y cuya URL tendrá la forma:
+en la máquina IaaS-ULL de la asignatura y cuya URL tendrá la forma:
 
-[1] `http://10.6.129.123:8080/einstein-albert-figures.html`
+[1] `http://10.6.129.123:8080/einstein-albert-quick-hull.html`
 
-en la que se embeberá un lienzo (canvas) para dibujar las diferentes figuras.
+en la que se embeberá un lienzo (canvas) para dibujar el conjunto de puntos y su polígono envolvente.
 Sustituya *Albert Einstein* por su nombre y apellido en la URL de su página
-y la dirección IP anterior por la correspondiente a su máquina IaaS.
+ la dirección IP anterior por la correspondiente a su máquina IaaS.
+
+La web [1] mostrará un lienzo (canvas) que ocupe la mayor parte de una pantalla de ordenador de resolución usual.
 
 No es necesario que invierta esfuerzo en la programación de los aspectos de esa página que no tienen relación
 con TypeScript. 
-Tanto HTML como CSS son aspectos que se estudiarán con mayor profundidad en el futuro. 
+Tanto HTML como CSS son aspectos que se estudiarán con cierto nivel de detalle en el futuro. 
 No se requiere que dedique esfuerzo a esos aspectos en esta práctica.
+Tampoco se propone en esta práctica que utilice elementos interactivos (botones, campos de texto, selectores,
+etc.).
 
 Diseñe asimismo otra página HTML simple 
 
@@ -80,35 +112,28 @@ Diseñe asimismo otra página HTML simple
 
 que sirva de "página índice" para los ejercicios de la sesión de evaluación de la práctica.
 La página [1] será uno de los enlaces de [2] y a su vez [1] tendrá un enlace "Home" que apunte a [2].
-Enlace también en la página índice [2] la página que contiene la documentación de su proyecto.
+Enlace también en la página índice [2] la página que contiene la documentación de su proyecto, generada con
+Typedoc.
 
-## Figuras geométricas
-En su aplicación puede puede implementar cualquier figura geométrica plana que desee, pero como mínimo la aplicación ha de
-contemplar cuadrados, rectángulos, triángulos y círculos.
-Cada figura puede caracterizarse con los atributos (*properties*) que estime oportuno, e igualmente puede
-elegir libremente los métodos que desarrolle para cada figura.
-Todas las figuras han de implementar un método *getArea()* que devuelva el valor del área de la figura en
-cuestión.
+Incluya una tercera página
+[3] `http://10.6.129.123:8080/uml.html`
+que muestre el diagrama UML de las clases que intervienen en su programa.
 
-## Diseño orientado a objetos
-Se deja total libertad al alumnado para diseñar la aplicación de la forma que estime más conveniente.
-Se valorará la puesta en práctica en el diseño que se realice de los contenidos relacionados con principios y
-buenas prácticas de OOP estudiados en la asignatura.
+Las siguientes deben tomarse como especificaciones adicionales de la aplicación a desarrollar:
 
-Sería conveniente tener en cuenta que al menos habrá clases para representar las diferentes figuras (una clase
-para cada tipo de figura considerada) y otra clase a la que podemos llamar *View* (Vista) que será la encargada de la
-visualización de las diferentes figuras en el canvas de la página web.
-
-La clase Vista, de modo similar a como se hizo en la página de la práctica 1 que calcula de forma aproximada el valor de *pi*, 
-solicitará al usuario (usando la función 
-[prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt))
-el número de figuras a dibujar.
-
-La Vista generará aleatoriamente (el tipo, su color, su posición, etc.) ese número de figuras y procederá a
-renderizarlas en la página.
+* El número de puntos que el programa genera de forma aleatoria para calcular su
+  envolvente, es un parámetro del programa que se introduce en una ventana similar a la que
+	utiliza el programa de ejemplo que calcula de forma aproximada el valor del número Pi.
+* Dado que la QuickHull es un algoritmo que se define de forma natural recursivamente, se admitirá cualquier tipo de solución, 
+  tanto recursiva como iterativa. 
+  Obviamente la solución recursiva es la primera que han de intentar porque será más sencilla de abordar que una alternativa iterativa.  
+* El programa deberá dibujar línea a línea cada uno de los pasos que sigue el algoritmo en la evolución
+  del cómputo de la envolvente, de forma similar a como lo hace la simulación anterior, que se tomará como
+  referencia.
+* El programa dejará transcurrir un cierto intervalo de tiempo entre el dibujo de una línea y la siguiente
+  en la evolución del algoritmo, de forma también análoga a como ocurre en la simulación previa.
 
 ## Referencias
-* [MDN Canvas Tutorial](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial)
 * [TypeScript Tutorial](https://www.typescripttutorial.net/)
 * [TypeDoc](https://typedoc.org/)
 * [TypeScript track in Exercism](https://exercism.org/tracks/typescript)

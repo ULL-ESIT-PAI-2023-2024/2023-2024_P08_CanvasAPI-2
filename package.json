@@ -1,7 +1,7 @@
 {
-  "name": "Práctica 7 de PAI",
+  "name": "Práctica 8 de PAI",
   "version": "1.0.0",
-  "description": "Canvas API. Geometric Figures",
+  "description": "Canvas API. Function representation",
   "private": true,
   "main": "index.js",
   "scripts": {

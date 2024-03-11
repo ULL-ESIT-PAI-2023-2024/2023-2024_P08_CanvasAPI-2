@@ -12,9 +12,8 @@ This text is Markdown text. To learn about Markdown, Study these references:
 * [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 The project directory organization is as follows:
+
 .
 └── src
-    ├── evaluation-session
-    ├── exercism
-    └── home-work
+    └── evaluation-session
 
