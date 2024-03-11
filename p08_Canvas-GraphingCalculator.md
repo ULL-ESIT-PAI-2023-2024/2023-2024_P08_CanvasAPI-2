@@ -62,13 +62,16 @@ de la representación gráfica de una función.
 Intente que su aplicación imite en la medida de lo posible a 
 [esta aplicación](https://www.geogebra.org/m/BTC45Jzp)
 que se tomará como referencia.
+
 De esa página imite los ejes coordenados así como la numeración de los mismos y el área de dibujo de la
 función.
 En el caso de esa página, pruebe a dibujar diferentes funciones usando el campo "Entrada" de la parte
 inferior.
 Pruebe a introducir funciones como *sin(x)*, *exp(x)* o *sqrt(x)* y visualice el resultado.
 
-
+A diferencia de la aplicación de referencia, en la aplicación que ha de desarrollar, la función que se va a
+representar será codificada *hardcoded* en su código fuente. 
+Para cambiar la función que se representa habría que modificar la función principal del programa.
 
 Previo al desarrollo, realice un diseño de su aplicación identificando las diferentes clases que
 intervienen en el programa.
@@ -123,7 +126,6 @@ Las siguientes deben tomarse como especificaciones adicionales de la aplicación
 Se deja total libertad al alumnado para diseñar la aplicación de la forma que estime más conveniente.
 Se valorará la puesta en práctica en el diseño que se realice de los contenidos relacionados con principios y
 buenas prácticas de OOP estudiados en la asignatura.
-
 
 ## Referencias
 * [TypeScript Tutorial](https://www.typescripttutorial.net/)
