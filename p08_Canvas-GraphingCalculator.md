@@ -110,18 +110,6 @@ que muestre el diagrama UML de las clases que intervienen en su programa.
 
 Las siguientes deben tomarse como especificaciones adicionales de la aplicación a desarrollar:
 
-* El número de puntos que el programa genera de forma aleatoria para calcular su
-  envolvente, es un parámetro del programa que se introduce en una ventana similar a la que
-	utiliza el programa de ejemplo que calcula de forma aproximada el valor del número Pi.
-* Dado que la QuickHull es un algoritmo que se define de forma natural recursivamente, se admitirá cualquier tipo de solución, 
-  tanto recursiva como iterativa. 
-  Obviamente la solución recursiva es la primera que han de intentar porque será más sencilla de abordar que una alternativa iterativa.  
-* El programa deberá dibujar línea a línea cada uno de los pasos que sigue el algoritmo en la evolución
-  del cómputo de la envolvente, de forma similar a como lo hace la simulación anterior, que se tomará como
-  referencia.
-* El programa dejará transcurrir un cierto intervalo de tiempo entre el dibujo de una línea y la siguiente
-  en la evolución del algoritmo, de forma también análoga a como ocurre en la simulación previa.
-
 ## Diseño orientado a objetos
 Se deja total libertad al alumnado para diseñar la aplicación de la forma que estime más conveniente.
 Se valorará la puesta en práctica en el diseño que se realice de los contenidos relacionados con principios y
